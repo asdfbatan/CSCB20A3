@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/lectures.css">
+  <link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  <link rel="stylesheet" type="text/css" href="../static/footer.css">
+</head>
+
+<body>
+  <div class="optionBar">
+    <img src="../static/img/utlogo.png">
+    <a href="/index">Home</a>
+    <a href="/syllabus">Syllabus</a>
+    <a href="/lectures" class="active">Lectures</a>
+    <a href="/labs">Labs</a>
+    <a href="/assignment">Assignments</a>
+    <a href="/courseTeam">Course Team</a>
+    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+    <a href="https://piazza.com">Piazza</a>
+
+    {% if instructor==True %}
+        <a href="/feedbackInstructor">Feedback</a>
+        <a href="/personalInstructor">Instructor Personal Page</a>
+        <a href="/allMarks">Marks Spreadsheet</a>
+    {% endif %}
+
+    {% if instructor==False %}
+      <a href="/feedback">Feedback</a>
+      {% for post in data %}
+        <a href="/personal">{{ post.studentname }}</a>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div id="pageName">
+    <h1>LECTURES</h1>
+  </div>
+  
+  <div class="box-title">LECTURE 1</div><br>
+  <div class="box-content">
+    Introduction, Databases background
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture1 PPT</a><br>
+  </div>
+  <div class="space"></div>
+ 
+  <div class="box-title">LECTURE 2</div><br>
+  <div class="box-content">
+    Schema Diagrams, Relational Algebra
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture2 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 3</div><br>
+  <div class="box-content">
+    SQL and MySQL
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture3 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 4</div><br>
+  <div class="box-content">
+    MySQL Queries, Creating and Editing Tables
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture4 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 5</div><br>
+  <div class="box-content">
+    MySQL Outer Joins, Views, NULL, string functions, HTML
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture5 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 6</div><br>
+  <div class="box-content">
+    HTML, CSS
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture6 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 7</div><br>
+  <div class="box-content">
+    PHP
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture7 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 8</div><br>
+  <div class="box-content">
+    PHP and SQL
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture8 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 9</div><br>
+  <div class="box-content">
+    JavaScript and jQuery
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture9 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 10</div><br>
+  <div class="box-content">
+    jQuery, AJAX, JSON
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture10 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">LECTURE 11</div><br>
+  <div class="box-content">
+    Last Year's final
+    <br><b>Description: </b><br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. 
+    <br><b>LectueSlides: </b>
+    <a href="../static/file/lecture.pptx">Lecture11 PPT</a><br>
+  </div>
+  <div class="space"></div>
+</body>
+
+  <div class="footer">
+    <footer>
+        <h2>CSCB2O</h2>
+        <a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        <p>Designer: Zhang Ti, Xia Tian</p>
+      </footer>
+  </div>
+</html>

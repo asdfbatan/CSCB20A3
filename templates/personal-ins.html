@@ -1,0 +1,94 @@
+<!DOCTYPE html><!-- 只有instructor会看到的界面，目前还没有连接到别的网页-->
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  	<link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  	<link rel="stylesheet" type="text/css" href="../static/footer.css">
+
+  	<span class="labelNotification" style="display:none">Your Warning Text</span>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script>
+  		alert("Welcome to your personal information page, instructor");
+		function EditMark()
+		{
+			$(".editMark").show();
+		}
+
+		function hide()
+		{
+			$(".editMark").hide();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="optionBar"><!-- top bar starts-->
+	    <img src="../static/img/utlogo.png">
+	    <a href="/index">Home</a>
+	    <a href="/syllabus">Syllabus</a>
+	    <a href="/lectures">Lectures</a>
+	    <a href="/labs">Labs</a>
+	    <a href="/assignment">Assignments</a>
+	    <a href="/courseTeam">Course Team</a>
+	    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+	    <a href="https://piazza.com">Piazza</a>
+	    <a href="/feedbackInstructor">Feedback</a><!-- 连接到instructor专用界面-->
+	    <a href="/personalInstructor" class="active">Personal Page</a><!-- 连接到instructor专用界面-->
+      <a href="/allMarks">Marks Spreadsheet</a>
+	</div><!-- top bar ends-->
+
+	<div id="pageName">
+    	<h1>Personal Page</h1>
+  	</div>
+
+  	<div class="box-title">Personal Operation</div><br>
+  	<div class="box-content">
+	    <a href="/logout">Logout</a><br>
+		<a href="/">Home page of cscb20</a>
+  	</div>
+  	<div class="space"></div>
+
+    
+
+    <!-- 这里给学生remark-->
+  	<div class="box-title">Remark Section</div><br>
+  	<div class="box-content" onload="hide()">
+  		<div class="editMark">
+  			<form method="post" action="/editmark">
+  				Enter student name: <input type="text" name="studentname"></input><br>
+  				Enter new Quiz 1 Mark: <input type="text" name="quiz1"></input><br>
+  				Enter new Quiz 2 Mark: <input type="text" name="quiz2"></input><br>
+    			Enter new Quiz 3 Mark: <input type="text" name="quiz3"></input><br>
+    			Enter new Midterm Exam: <input type="text" name="me"></input><br>
+    			Enter new Final Exam <input type="text" name="fe"></input><br>
+    			<input type="submit">
+  			</form>
+  		</div>
+	</div>
+  	<div class="space"></div>
+
+    <div class="box-title">Remark Requests</div><br>
+    {% for post in data %}
+    <!-- 这里查看所有的remark request-->
+    
+    <div class="box-content">
+      <p class="type-of-exam"><b>Type of Exam: </b>{{post.type}}</p>
+      <p class="student-name"><b>Student Name: </b>{{post.studentname}}</p>
+      <p class="remark-content"><b>Student Comment: </b>{{post.comment}}</p>
+    </div>
+    <div class="space"></div>
+    {% endfor %}
+
+	<div class="footer">
+    	<footer>
+        	<h2>CSCB2O</h2>
+        	<a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        	<p>Designer: Zhang Ti, Xia Tian</p>
+      	</footer>
+  	</div>
+
+</body>
+
+</html>

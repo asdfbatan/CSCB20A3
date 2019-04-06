@@ -1,0 +1,113 @@
+<!DOCTYPE html><!-- 只有学生会看到的界面-->
+<html>
+{% for post in data %}
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  	<link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  	<link rel="stylesheet" type="text/css" href="../static/footer.css">
+
+  	<span class="labelNotification" style="display:none">Your Warning Text</span>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script>
+  		alert("Welcome to your personal information page,{{post.studentname}}");
+		function EditMark()
+		{
+			$(".editMark").show();
+		}
+
+		function hide()
+		{
+			$(".editMark").hide();
+		}
+
+		//没有作用，只是试着用if else
+		$(function() {
+		    $("#fieldA").change(function() {
+		       var a = {{ post.studentname }}
+		       // handle if a or b is not a number -->  isNaN(a) || isNaN(b)
+
+		      if( a > b ) {
+		        $('.labelNotification').show()
+		      } else {
+		        $('.labelNotification').hide()
+		      }    
+		    });
+		});
+		
+	</script>
+</head>
+
+<body>
+	<div class="optionBar"><!-- top bar starts-->
+	    <img src="../static/img/utlogo.png">
+	    <a href="/index">Home</a>
+	    <a href="/syllabus">Syllabus</a>
+	    <a href="/lectures">Lectures</a>
+	    <a href="/labs">Labs</a>
+	    <a href="/assignment">Assignments</a>
+	    <a href="/courseTeam">Course Team</a>
+	    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+	    <a href="https://piazza.com">Piazza</a>
+	    <if condition=""><else></else></if>
+	    <a href="/feedback">Feedback</a>
+	    <a href="/personal" class="active">{{ post.studentname }}</a>
+	</div><!-- top bar ends-->
+
+	<div id="pageName">
+    	<h1>Personal Page Of {{post.studentname}}</h1>
+  	</div>
+
+  	<!-- logout的地方 -->
+  	<div class="box-title">Personal Operations</div><br>
+  	<div class="box-content">
+	    <b>Student Name:{{post.studentname}}</b><br>
+	    <a href="/logout">Logout</a><br>
+		<a href="/">Home page of cscb20</a>
+  	</div>
+  	<div class="space"></div>
+
+  	<!-- 查看自己分数的地方-->
+	<div class="box-title">Marks Spreadsheet</div><br>
+  	<div class="box-content">
+	       <b>Student Name:{{post.studentname}}</b><br>
+	       <p>Quiz 1: {{post.quiz1}} </p>
+	       <p>Quiz 2: {{post.quiz2}}</p>
+	       <p>Quiz 3: {{post.quiz3}}</p>
+	       <p>Midterm Exam:{{post.midtermexam}}</p>
+	       <p>Final Exam: {{post.finalexam}}</p>
+  	</div>
+  	<div class="space"></div>
+
+	<!-- 提交remark request的地方-->
+  	<div class="box-title">Request Remark</div><br>
+  	<div class="box-content" onload="hide()">
+       <div class="remark">
+       		<form method="post" action="/remark">
+       			Enter Remark Comments on Quiz1: <input type="text" name="quiz1"></input>
+       			<input type="submit"><br><br>
+       			Enter Remark Comments on Quiz 2: <input type="text" name="quiz2"></input>
+       			<input type="submit"><br><br>
+       			Enter Remark Comments on Quiz 3: <input type="text" name="quiz3"></input>
+       			<input type="submit"><br><br>
+       			Enter Remark Comments on Midterm Exam: <input type="text" name="me"></input>
+       			<input type="submit"><br><br>
+       			Enter Remark Comments on Final Exam <input type="text" name="fe"></input>
+       			<input type="submit"><br><br>
+			</form>
+		</div>
+	</div>
+
+  	<div class="space"></div>
+
+	<div class="footer">
+    	<footer>
+        	<h2>CSCB2O</h2>
+        	<a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        	<p>Designer: Zhang Ti, Xia Tian</p>
+      	</footer>
+  	</div>
+
+</body>
+{% endfor %}
+</html>

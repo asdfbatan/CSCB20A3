@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  <link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  <link rel="stylesheet" type="text/css" href="../static/footer.css">
+</head>
+
+<body>
+  <div class="optionBar"><!-- top bar starts-->
+    <img src="../static/img/utlogo.png">
+    <a href="/index">Home</a>
+    <a href="/syllabus">Syllabus</a>
+    <a href="/lectures">Lectures</a>
+    <a href="/labs">Labs</a>
+    <a href="/assignment" class="active">Assignments</a>
+    <a href="/courseTeam">Course Team</a>
+    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+    <a href="https://piazza.com">Piazza</a>
+
+    {% if instructor==True %}
+        <a href="/feedbackInstructor">Feedback</a>
+        <a href="/personalInstructor">Instructor Personal Page</a>
+        <a href="/allMarks">Marks Spreadsheet</a>
+    {% endif %}
+
+    {% if instructor==False %}
+      <a href="/feedback">Feedback</a>
+      {% for post in data %}
+        <a href="/personal">{{ post.studentname }}</a>
+      {% endfor %}
+    {% endif %}
+  </div><!-- top bar ends-->
+
+  <!-- main material starts-->
+  <div id="pageName">
+    <h1>Assignments</h1>
+  </div>
+  
+  <div class="box-title">ASSIGNMENT 1</div><br>
+  <div class="box-content">
+    <b>Topic: </b>Relational Algebra and MySQL<br><br>
+    <b>Weight: </b>15%<br><br>
+    <b>Description: </b>Part 1. Wednesday Feb. 1, 11.59pm, Submit to MarkUs. Part 2 and 3. For 5% bonus Saturday Feb. 11, 11.59pm or Friday Feb. 17, 11.59 Submit to MarkUs <br><br>
+    <b>Materials related: </b>
+    <a href="../static/file/assignment.pptx">Assignment1 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">ASSIGNMENT 2</div><br>
+  <div class="box-content">
+    <b>Topic: </b>HTML, CSS, PHP<br><br>
+    <b>Weight: </b>15%<br><br>
+    <b>Description: </b>Part 1: Worth 50% Friday March. 10, 11.59pm, Submit to MarkUs. Part 2: Worth 50% Friday March. 19, 11.59pm, Submit to MarkUs <br><br>
+    <b>Materials related: </b>
+    <a href="../static/file/assignment.pptx">Assignment2 PPT</a><br>
+  </div>
+  <div class="space"></div>
+
+  <div class="box-title">ASSIGNMENT 3</div><br>
+  <div class="box-content">
+    <b>Topic: </b>HTML, CSS, PHP<br><br>
+    <b>Weight: </b>15%<br><br>
+    <b>Description: </b>Due at Friday March 31, 11.59pm, with a new marking scheme <br><br>
+    <b>Materials related: </b>
+    <a href="../static/file/assignment.pptx">Assignment3 PPT</a><br>
+  </div>
+  <div class="space"></div>
+  <!-- main material ends-->
+  
+  <div class="footer">
+    <footer>
+        <h2>CSCB2O</h2>
+        <a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        <p>Designer: Zhang Ti, Xia Tian</p>
+      </footer>
+  </div>
+</body>
+
+</html>

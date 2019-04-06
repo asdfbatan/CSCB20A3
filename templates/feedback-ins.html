@@ -1,0 +1,67 @@
+<!DOCTYPE html><!-- 只有instructor会看到的界面，目前还没有连接到别的网页-->
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  	<link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  	<link rel="stylesheet" type="text/css" href="../static/footer.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script>
+		function hide()
+		{
+			$(".editMark").hide();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="optionBar"><!-- top bar starts-->
+	    <img src="../static/img/utlogo.png">
+	    <a href="/index">Home</a>
+	    <a href="/syllabus">Syllabus</a>
+	    <a href="/lectures">Lectures</a>
+	    <a href="/labs">Labs</a>
+	    <a href="/assignment">Assignments</a>
+	    <a href="/courseTeam">Course Team</a>
+	    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+	    <a href="https://piazza.com">Piazza</a>
+	    <a href="/feedbackInstructor" class="active">Feedback</a><!-- 连接到instructor专用界面-->
+	    <a href="/personalInstructor">Instructor Personal Page</a><!-- 连接到instructor专用界面-->
+	    <a href="/allMarks">Marks Spreadsheet</a>
+	</div><!-- top bar ends-->
+
+	<div id="pageName">
+    	<h1>Feedback Page Of Instructor</h1>
+  	</div>
+
+  	<div class="box-title">Read Anonymous Feedback</div><br>
+  	{% for post in data %}
+  	<!-- 这里查看所有的feedback-->
+
+  	<div class="box-content">
+	    Question1: What do you like about the instructor teaching?<br>
+    	<p>{{post.question1}}</p><br>
+	    Question2: What do you recommend the instructor to do to improve their teaching?<br>
+	    <p>{{post.question2}}</p><br>
+	    Question3: What do you like about the labs?<br>
+	    <p>{{post.question3}}</p><br>
+        Question4: What do you recommend the lab instructors to do to improve their lab teaching?<br>
+        <p>{{post.question4}}</p><br>
+        Other feedbacks:<br>
+        <p>{{post.question5}}</p><br>
+  	</div>
+  	<div class="space"></div>
+  	{% endfor %}
+
+	<div class="footer">
+    	<footer>
+        	<h2>CSCB2O</h2>
+        	<a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        	<p>Designer: Zhang Ti, Xia Tian</p>
+      	</footer>
+  	</div>
+
+</body>
+
+</html>

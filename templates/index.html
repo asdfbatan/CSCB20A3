@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/index.css">
+  <link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  <link rel="stylesheet" type="text/css" href="../static/footer.css">
+</head>
+
+<body>
+  <div class="optionBar"><!-- top bar starts-->
+    <img src="../static/img/utlogo.png">
+    <a href="/index" class="active">Home</a>
+    <a href="/syllabus">Syllabus</a>
+    <a href="/lectures">Lectures</a>
+    <a href="/labs">Labs</a>
+    <a href="/assignment/">Assignments</a>
+    <a href="/courseTeam/">Course Team</a>
+    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+    <a href="https://piazza.com">Piazza</a>
+
+    {% if instructor==True %}
+        <a href="/feedbackInstructor">Feedback</a>
+        <a href="/personalInstructor">Instructor Personal Page</a>
+        <a href="/allMarks">Marks Spreadsheet</a>
+    {% endif %}
+
+    {% if instructor==False %}
+      <a href="/feedback">Feedback</a>
+      {% for post in data %}
+        <a href="/personal">{{ post.studentname }}</a>
+      {% endfor %}
+    {% endif %}
+  </div><!-- top bar ends-->
+
+  <div id="pageName">
+    <h1>Welcome To CSCB20</h1>
+  </div>
+
+  <!-- main material starts-->
+  <div class="section">
+    <h2>Course Overview</h2>
+    <p><b>A practical introduction to databases and Web app development.</b><br><b>Databases: </b>terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. <br><b>Web documents and applications: </b>static and interactive documents; <br><b>Web servers and dynamic server-generated content; </b><br><b>Web application development and interface with databases.</b></p>
+  </div>
+
+  <div class="section">
+    <h2>Instructor</h2>
+    <p><b>Instructor: </b> A. Attarwala</p>
+    <p><b>Lecture: </b> Mondays 9 am to 11 am in HL 001</p>
+    <p><b>Email: </b> MYFIRSYNAME.MYLASTNAME@utoronto.ca</p>
+    <p><b> Class website: </b> Quercus</p>
+  </div>
+
+  <div class="section">
+    <h2>Prerequisite</h2>
+    <p>Some experience with programming in an imperative language such as Python, Java or C.</p>
+  </div>
+
+  <div class="section">
+    <h2>Exclusion</h2>
+    <p>This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
+  </div>
+
+  <div class="section">
+    <h2>Syllabus</h2>
+    <p>Syllabus to this course can be found here:
+      <a href="../static/file/syllabus.pdf">Syllabus</a></p>
+  </div>
+  <!-- main material ends-->
+  
+  <div class="footer">
+    <footer>
+        <h2>CSCB2O</h2>
+        <a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        <p>Designer: Zhang Ti, Xia Tian</p>
+      </footer>
+  </div>
+
+</body>

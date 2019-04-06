@@ -1,0 +1,72 @@
+<!DOCTYPE html><!-- 只有学生会看到的界面-->
+<html>
+{% for post in data %}
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  	<link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  	<link rel="stylesheet" type="text/css" href="../static/footer.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script>
+		function hide()
+		{
+			$(".editMark").hide();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="optionBar"><!-- top bar starts-->
+	    <img src="../static/img/utlogo.png">
+	    <a href="/index">Home</a>
+	    <a href="/syllabus">Syllabus</a>
+	    <a href="/lectures">Lectures</a>
+	    <a href="/labs">Labs</a>
+	    <a href="/assignment">Assignments</a>
+	    <a href="/courseTeam">Course Team</a>
+	    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+	    <a href="https://piazza.com">Piazza</a>
+	    <a href="/feedback" class="active">Feedback</a>
+	    <a href="/personal">{{ post.studentname }}</a>
+	</div><!-- top bar ends-->
+
+	<div id="pageName">
+    	<h1>Anonymous Feedback</h1>
+  	</div>
+
+  	<!-- 提交匿名feedback的地方-->
+  	<div class="box-title">Feedback Section</div><br>
+  	<div class="box-content" onload="hide()">
+       <div class="feedBack">
+       		<form method="post" action="/writefeedback">
+       			***Please enter the instructor name correctly to make sure the feedback reach efficiently<br>
+       			***Instructor list: instructor1, instructor2<br><br>
+       			Enter instructor name: <input type="text" name="feedbackInstructor"></input><br><br>
+       			Question1: What do you like about the instructor teaching?<br>
+       			<input type="text" name="feedback1"></input><br>
+		        Question2: What do you recommend the instructor to do to improve their teaching?<br>
+		        <input type="text" name="feedback2"></input><br>
+		        Question3: What do you like about the labs?<br>
+		        <input type="text" name="feedback3"></input><br>
+		        Question4: What do you recommend the lab instructors to do to improve their lab teaching?<br>
+		        <input type="text" name="feedback4"></input><br>
+		        Enter anything you want to feedback:<br>
+		        <input type="text" name="feedback5"></input><br>
+		        <br>
+		        <input type="submit"></input><br>
+			</form>
+		</div>
+	</div>
+  	<div class="space"></div>
+
+	<div class="footer">
+    	<footer>
+        	<h2>CSCB2O</h2>
+        	<a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        	<p>Designer: Zhang Ti, Xia Tian</p>
+      	</footer>
+  	</div>
+
+</body>
+{% endfor %}
+</html>

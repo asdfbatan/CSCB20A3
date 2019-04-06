@@ -1,0 +1,77 @@
+.row{/*special case for new style*/
+  float: left; 
+  margin-left:9%;
+  margin-right:9%;
+  text-align: center;
+  border: 2px solid black;
+  border-radius:25px;
+  padding: 20px;
+}
+
+.box-content{ 
+  max-height: 300px;
+  min-height: 300px;
+  width: 280px; 
+  float: left; 
+  background-color: #fff; 
+  text-align: center; 
+  overflow: hidden;
+  margin: 5% 4% 5% 4%;
+  border: 4px dashed #003366;
+  border-radius:25px;
+  position: middle;
+}
+
+.box-content h5 {/*position*/
+  font-size: 15px; 
+  margin: 0 0 15px; 
+}
+.box-content h3{/*name*/
+  font-size: 25px; 
+  padding-top: 7px; 
+  margin: 10px 0 0; 
+  text-transform: uppercase;
+  line-height: 33px;
+}
+.box-content p {/*introduction*/
+  font-size: 15px; 
+  font-weight: 300; 
+  line-height: 22px; 
+  padding: 0 30px; 
+}
+
+.member-image{
+  border-bottom: 5px solid #003366; 
+  height: 212px; 
+  overflow: hidden; 
+  width: 100%; 
+  transition: 0.4s; 
+  display: inline-block; 
+  float: none; 
+  vertical-align: middle;
+}
+
+.member-image img{
+  width: 100%; 
+  vertical-align: bottom;
+}
+
+.box-content:hover .member-image{/*new style for photo*/
+  height: 80px; 
+  transition: 0.4s;
+}
+
+#pageName {
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  background: linear-gradient(to right, red, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.space {
+  margin-bottom: 40px;
+}

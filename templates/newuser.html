@@ -1,0 +1,53 @@
+<!DOCTYPE html><!-- 注册新用户的界面-->
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/assignment.css">
+  	<link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  	<link rel="stylesheet" type="text/css" href="../static/footer.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script>
+		function hide()
+		{
+			$(".editMark").hide();
+		}
+	</script>
+</head>
+
+<body>
+	<div class="optionBar"><!-- top bar starts-->
+	    <img src="../static/img/utlogo.png">
+	    <a href="/public">Home page of cscb20</a>
+	</div><!-- top bar ends-->
+
+	<div id="pageName">
+    	<h1>Create New User</h1>
+  	</div>
+
+	<!--  填写注册信息的地方 -->
+  	<div class="box-title">Creating Box</div><br>
+  	<div class="box-content" onload="hide()">
+      <div class="newUser">
+       		<form method="post" action="/createNewuser">
+            ***Note the account type can only be [student] or [instructor] identically in the bracket.<br><br>
+       			Enter the accout type you want to create: <input type="text" name="type"></input><br>
+       			Enter the account name you want: <input type="text" name="username"></input><br>
+       			Enter the account password you want: <input type="text" name="password"></input><br>
+       			<input type="submit"><br><br>
+			    </form>
+		  </div>
+	  </div>
+  	<div class="space"></div>
+
+	<div class="footer">
+    	<footer>
+        	<h2>CSCB2O</h2>
+        	<a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        	<p>Designer: Zhang Ti, Xia Tian</p>
+      	</footer>
+  	</div>
+
+</body>
+
+</html>

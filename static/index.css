@@ -1,0 +1,37 @@
+#pageName {
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  background-image: linear-gradient(to bottom,#F80, #2ED);
+     -webkit-background-clip: text;/*do not work with safari*/
+     -webkit-text-fill-color: transparent;
+}
+
+.section {
+  text-align: center;
+  color: black;
+  margin: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px dashed black;
+  border-radius:25px;
+  background: #CCCCCC;
+}
+
+a{
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover { 
+  text-decoration:underline;
+  color: red
+} 
+.section h2{
+  text-decoration: underline;
+}

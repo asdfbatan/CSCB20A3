@@ -1,0 +1,43 @@
+<!DOCTYPE html><!-- 没登录时可以看到的界面-->
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/index.css">
+  <link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  <link rel="stylesheet" type="text/css" href="../static/footer.css">
+</head>
+
+<script>
+  alert("You are not logged in.");
+</script>
+
+<body>
+  <div class="optionBar"><!-- top bar starts-->
+    <img src="../static/img/utlogo.png">
+    <a>{{ get_flashed_messages()[0] }}</a>
+    <a href="/login">|| Log In ||</a>
+    <a href="/newuser">|| New User ||</a>
+    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+    <a href="https://piazza.com">Piazza</a>
+  </div><!-- top bar ends-->
+
+  <div id="pageName">
+    <h1>Welcome To CSCB20</h1>
+  </div>
+
+  <!-- main material starts-->
+  <div class="section">
+    <h2>Course Overview</h2>
+    <p><b>A practical introduction to databases and Web app development.</b><br><b>Databases: </b>terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. <br><b>Web documents and applications: </b>static and interactive documents; <br><b>Web servers and dynamic server-generated content; </b><br><b>Web application development and interface with databases.</b></p>
+  </div>
+  <!-- main material ends-->
+  
+  <div class="footer">
+    <footer>
+        <h2>CSCB2O</h2>
+        <a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+        <p>Designer: Zhang Ti, Xia Tian</p>
+      </footer>
+  </div>
+
+</body>

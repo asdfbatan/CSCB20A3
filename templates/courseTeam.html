@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/courseTeam.css">
+  <link rel="stylesheet" type="text/css" href="../static/optionBar.css">
+  <link rel="stylesheet" type="text/css" href="../static/footer.css">
+</head>
+
+<body>
+  <div class="optionBar"><!-- top bar starts-->
+    <img src="../static/img/utlogo.png">
+    <a href="/index">Home</a>
+    <a href="/syllabus">Syllabus</a>
+    <a href="/lectures">Lectures</a>
+    <a href="/labs">Labs</a>
+    <a href="/assignment">Assignments</a>
+    <a href="/courseTeam" class="active">Course Team</a>
+    <a href="https://markus.utsc.utoronto.ca">MarkUs</a>
+    <a href="https://piazza.com">Piazza</a>
+
+    {% if instructor==True %}
+        <a href="/feedbackInstructor">Feedback</a>
+        <a href="/personalInstructor">Instructor Personal Page</a>
+        <a href="/allMarks">Marks Spreadsheet</a>
+    {% endif %}
+
+    {% if instructor==False %}
+      <a href="/feedback">Feedback</a>
+      {% for post in data %}
+        <a href="/personal">{{ post.studentname }}</a>
+      {% endfor %}
+    {% endif %}
+  </div><!-- top bar ends-->
+
+  <div id="pageName">
+    <h1>Course Team</h1>
+  </div>
+
+  <!-- main material starts-->
+  <div class="row"><!-- row starts-->
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Abbas.A">
+      </div>
+      <div class="member-info">
+        <h3>Abbas.A</h3>
+        <h5>Professor detail</h5>
+        <p>The professor of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Suhailah Rahman">
+      </div>
+      <div class="member-info">
+        <h3>Suhailah Rahman</h3>
+        <h5>TA detail</h5>
+        <p>The TA of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Kevin Zhang">
+      </div>
+      <div class="member-info">
+        <h3>Kevin Zhang</h3>
+        <h5>TA detail</h5>
+        <p>The TA of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Dharmil Shah">
+      </div>
+      <div class="member-info">
+        <h3>Dharmil Shah</h3>
+        <h5>TA detail</h5>
+        <p>The TA of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Xia Zhongyang">
+      </div>
+      <div class="member-info">
+        <h3>Xia Zhongyang</h3>
+        <h5>TA detail</h5>
+        <p>The TA of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+    <div class="box-content">
+      <div class="member-image">
+        <img src="../static/img/default_user.png" alt="Brian Lam">
+      </div>
+      <div class="member-info">
+        <h3>Brian Lam</h3>
+        <h5>TA detail</h5>
+        <p>The TA of CSCB20, email:unkown, office hour: unkown</p>
+      </div>
+    </div>
+
+  </div><!--row end-->
+  <!-- main material ends-->
+  <div class="footer">
+      <footer>
+          <h2>CSCB2O</h2>
+          <a href="http://web.cs.toronto.edu/people/faculty.htm"><p>Faculty Of Computer Science</p></a>
+          <p>Designer: Zhang Ti, Xia Tian</p>
+        </footer>
+    </div>
+  </div>
+
+  <!-- dummy line for style, need debug-->
+  <div class="dummy"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  <div class="dummy"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  <div class="dummy"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+  
+</body>
+</html>
